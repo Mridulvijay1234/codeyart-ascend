@@ -65,7 +65,7 @@ export function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50 flex justify-center pt-4 px-4">
       <nav className={`flex items-center gap-6 rounded-full px-3 py-2 transition-all ${scrolled ? "cy-glass-strong" : "cy-glass"}`}>
         <a href="#" className="flex items-center gap-2 pl-3 pr-2">
-          <span className="grid size-8 place-items-center rounded-xl text-white font-bold" style={{ background: "var(--cy-grad-primary)" }}>C</span>
+          <span className="grid size-8 place-items-center rounded-xl text-white font-bold" style={{ background: "var(--cy-grad-primary)" }}>Z</span>
           <span className="font-semibold tracking-tight text-[var(--cy-ink)]">Zyvera</span>
         </a>
         <ul className="hidden md:flex items-center gap-1">
@@ -74,7 +74,7 @@ export function Navbar() {
           ))}
         </ul>
         <a href="#contact" className="cy-magnetic-btn rounded-full px-5 py-2 text-sm font-semibold text-white" style={{ background: "var(--cy-grad-primary)" }}>
-          Start Project
+          Browse Templates
         </a>
       </nav>
     </header>
@@ -851,7 +851,7 @@ export function Footer() {
         <div className="cy-glass-strong rounded-[36px] p-10 grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2">
-              <span className="grid size-9 place-items-center rounded-xl text-white font-bold" style={{ background: "var(--cy-grad-primary)" }}>C</span>
+              <span className="grid size-9 place-items-center rounded-xl text-white font-bold" style={{ background: "var(--cy-grad-primary)" }}>Z</span>
               <span className="font-semibold text-lg tracking-tight text-[var(--cy-ink)]">Zyvera</span>
             </div>
             <p className="mt-4 text-sm text-[var(--cy-mute)] max-w-md">
