@@ -60,13 +60,13 @@ export function Navbar() {
     const f = () => setScrolled(window.scrollY > 30);
     f(); window.addEventListener("scroll", f); return () => window.removeEventListener("scroll", f);
   }, []);
-  const links = ["Services", "Work", "Industries", "Process", "Stack", "Contact"];
+  const links = ["Templates", "Categories", "Pricing", "Showcase", "Stack", "Contact"];
   return (
     <header className="fixed top-0 inset-x-0 z-50 flex justify-center pt-4 px-4">
       <nav className={`flex items-center gap-6 rounded-full px-3 py-2 transition-all ${scrolled ? "cy-glass-strong" : "cy-glass"}`}>
         <a href="#" className="flex items-center gap-2 pl-3 pr-2">
-          <span className="grid size-8 place-items-center rounded-xl text-white font-bold" style={{ background: "var(--cy-grad-primary)" }}>C</span>
-          <span className="font-semibold tracking-tight text-[var(--cy-ink)]">Codeyart</span>
+          <span className="grid size-8 place-items-center rounded-xl text-white font-bold" style={{ background: "var(--cy-grad-primary)" }}>Z</span>
+          <span className="font-semibold tracking-tight text-[var(--cy-ink)]">Zyvera</span>
         </a>
         <ul className="hidden md:flex items-center gap-1">
           {links.map(l => (
@@ -74,7 +74,7 @@ export function Navbar() {
           ))}
         </ul>
         <a href="#contact" className="cy-magnetic-btn rounded-full px-5 py-2 text-sm font-semibold text-white" style={{ background: "var(--cy-grad-primary)" }}>
-          Start Project
+          Browse Templates
         </a>
       </nav>
     </header>
@@ -166,7 +166,6 @@ export function Hero() {
       className="relative min-h-screen overflow-hidden pt-36 pb-24 cy-mesh"
     >
       <div className="absolute inset-0 cy-grid-bg" />
-      {/* floating orbs */}
       <motion.div style={{ x: tx, y: ty }} className="absolute -top-32 -left-32 size-[420px] rounded-full" >
         <div className="size-full rounded-full" style={{ background: "radial-gradient(circle, rgba(109,92,255,0.45), transparent 70%)", filter: "blur(40px)" }} />
       </motion.div>
@@ -177,58 +176,130 @@ export function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <SectionEyebrow>Digital Transformation Studio</SectionEyebrow>
+            <SectionEyebrow>Premium Template Marketplace</SectionEyebrow>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="mt-6 text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.02] tracking-tight text-[var(--cy-ink)]"
           >
-            Transforming<br/>Businesses Through{" "}
-            <span className="cy-text-brand">Technology</span>
+            Launch faster with{" "}
+            <span className="cy-text-brand">ready-made</span> templates.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25 }}
             className="mt-6 max-w-xl text-lg text-[var(--cy-mute)] leading-relaxed"
           >
-            We build powerful software, modern websites, digital growth systems, and
-            AI-driven solutions that accelerate business success.
+            Production-ready e-commerce, SaaS, portfolio and landing page templates —
+            built with React, Next.js & Tailwind. Buy once, ship in minutes.
           </motion.p>
+
+          {/* search bar */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-10 flex flex-wrap items-center gap-4"
+            transition={{ duration: 0.8, delay: 0.35 }}
+            className="mt-8 cy-glass-strong rounded-full p-1.5 pl-5 flex items-center gap-3 max-w-xl"
           >
-            <MagneticButton href="#contact">Start Your Project <ArrowRight className="size-4" /></MagneticButton>
-            <MagneticButton variant="ghost" href="#work">View Our Work <ArrowUpRight className="size-4" /></MagneticButton>
+            <Search className="size-5 text-[var(--cy-mute)]" />
+            <input
+              type="text"
+              placeholder="Search templates — ecommerce, SaaS, portfolio…"
+              className="flex-1 bg-transparent text-sm text-[var(--cy-ink)] placeholder:text-[var(--cy-mute)]/70 focus:outline-none"
+            />
+            <button className="rounded-full px-5 py-2.5 text-sm font-semibold text-white" style={{ background: "var(--cy-grad-primary)" }}>
+              Search
+            </button>
           </motion.div>
-          <div className="mt-12 flex flex-wrap items-center gap-6 text-xs text-[var(--cy-mute)]">
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.45 }}
+            className="mt-6 flex flex-wrap items-center gap-4"
+          >
+            <MagneticButton href="#templates">Browse Templates <ArrowRight className="size-4" /></MagneticButton>
+            <MagneticButton variant="ghost" href="#showcase">Live Previews <ArrowUpRight className="size-4" /></MagneticButton>
+          </motion.div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-6 text-xs text-[var(--cy-mute)]">
             <div className="flex -space-x-2">
               {["#6d5cff","#2e7bff","#22d3ee","#ff5fa8"].map(c => (
                 <div key={c} className="size-7 rounded-full border-2 border-white" style={{ background: c }} />
               ))}
             </div>
-            <div>Trusted by <b className="text-[var(--cy-ink)]">100+ global brands</b></div>
-            <div className="flex items-center gap-1 text-amber-500">★★★★★ <span className="text-[var(--cy-mute)] ml-1">4.9/5 rated</span></div>
+            <div><b className="text-[var(--cy-ink)]">12,400+</b> developers shipping faster</div>
+            <div className="flex items-center gap-1 text-amber-500">★★★★★ <span className="text-[var(--cy-mute)] ml-1">4.9/5 (2.1k reviews)</span></div>
           </div>
         </div>
 
-        <motion.div style={{ x: useTransform(px, v => v * -25), y: useTransform(py, v => v * -25) }} className="relative">
-          <Globe />
-          <FloatingCard title="Web Development" icon={Code2} color="linear-gradient(135deg,#6d5cff,#2e7bff)" x="-6%" y="14%" delay={0.6} />
-          <FloatingCard title="Software Development" icon={Cpu} color="linear-gradient(135deg,#2e7bff,#22d3ee)" x="78%" y="6%" delay={0.8} />
-          <FloatingCard title="Digital Marketing" icon={Megaphone} color="linear-gradient(135deg,#ff5fa8,#6d5cff)" x="-10%" y="72%" delay={1.0} />
-          <FloatingCard title="Sales Marketing" icon={TrendingUp} color="linear-gradient(135deg,#ffb547,#ff5fa8)" x="72%" y="78%" delay={1.2} />
+        {/* Template preview stack */}
+        <motion.div style={{ x: useTransform(px, v => v * -25), y: useTransform(py, v => v * -25) }} className="relative aspect-square max-w-[560px] mx-auto">
+          {/* glow */}
+          <div className="absolute inset-8 rounded-[40px]" style={{ background: "radial-gradient(circle at 50% 40%, rgba(109,92,255,0.35), rgba(34,211,238,0.15) 50%, transparent 75%)", filter: "blur(30px)" }} />
+
+          {/* back template card */}
+          <motion.div
+            initial={{ opacity: 0, x: 40, rotate: 8 }} animate={{ opacity: 1, x: 0, rotate: 6 }}
+            transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute right-2 top-6 w-[78%] aspect-[4/5] rounded-3xl overflow-hidden cy-glass-strong"
+          >
+            <div className="h-1/2 relative" style={{ background: "linear-gradient(135deg,#ff5fa8,#6d5cff)" }}>
+              <div className="absolute inset-0 grid place-items-center text-white text-5xl font-semibold tracking-tight">Aura</div>
+            </div>
+            <div className="p-5">
+              <div className="text-xs text-[var(--cy-mute)] uppercase tracking-widest">Fashion E-commerce</div>
+              <div className="mt-1 font-semibold text-[var(--cy-ink)]">Aura Store Template</div>
+              <div className="mt-3 flex items-center justify-between">
+                <span className="text-lg font-semibold cy-text-brand">$49</span>
+                <span className="text-xs text-[var(--cy-mute)]">Next.js · Stripe</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* front template card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30, rotate: -8 }} animate={{ opacity: 1, y: 0, rotate: -4 }}
+            transition={{ delay: 0.55, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute left-2 bottom-4 w-[78%] aspect-[4/5] rounded-3xl overflow-hidden cy-glass-strong cy-anim-float"
+          >
+            <div className="h-1/2 relative" style={{ background: "linear-gradient(135deg,#6d5cff,#22d3ee)" }}>
+              <div className="absolute top-4 left-4 right-4 flex items-center gap-1.5">
+                <span className="size-2.5 rounded-full bg-white/60" /><span className="size-2.5 rounded-full bg-white/40" /><span className="size-2.5 rounded-full bg-white/30" />
+              </div>
+              <div className="absolute inset-0 grid place-items-center text-white">
+                <div className="text-center">
+                  <ShoppingBag className="size-12 mx-auto" />
+                  <div className="mt-2 text-3xl font-semibold tracking-tight">Nova Shop</div>
+                </div>
+              </div>
+            </div>
+            <div className="p-5">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] uppercase tracking-widest text-white px-2 py-0.5 rounded-full" style={{ background: "var(--cy-grad-primary)" }}>Bestseller</span>
+                <span className="text-xs text-amber-500">★ 4.9</span>
+              </div>
+              <div className="mt-2 font-semibold text-[var(--cy-ink)]">Nova E-commerce Kit</div>
+              <div className="mt-1 text-xs text-[var(--cy-mute)]">Full-stack store · Cart · Checkout</div>
+              <div className="mt-3 flex items-center justify-between">
+                <span className="text-2xl font-semibold cy-text-brand">$79</span>
+                <button className="rounded-full px-3 py-1.5 text-xs font-semibold text-white" style={{ background: "var(--cy-grad-primary)" }}>Buy now</button>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* floating stat chips */}
+          <FloatingCard title="Instant Download" icon={Rocket} color="linear-gradient(135deg,#6d5cff,#2e7bff)" x="-12%" y="6%" delay={0.7} />
+          <FloatingCard title="Lifetime Updates" icon={Sparkles} color="linear-gradient(135deg,#22d3ee,#2e7bff)" x="68%" y="-2%" delay={0.9} />
+          <FloatingCard title="Stripe Checkout" icon={Wallet} color="linear-gradient(135deg,#ffb547,#ff5fa8)" x="74%" y="82%" delay={1.1} />
         </motion.div>
       </div>
 
-      {/* logo marquee */}
+      {/* category chips marquee */}
       <div className="relative mt-20 overflow-hidden">
-        <div className="flex gap-16 cy-anim-marquee whitespace-nowrap text-2xl font-semibold text-[var(--cy-mute)]/60">
+        <div className="flex gap-4 cy-anim-marquee whitespace-nowrap">
           {[...Array(2)].flatMap((_, i) =>
-            ["Nimbus", "Orbit Labs", "Helios", "Quantia", "Lumen", "Northwind", "Vertex", "Polaris", "Mercurial", "Atelier"].map((b) => (
-              <span key={`${i}-${b}`} className="tracking-tight">{b}</span>
+            ["E-commerce", "SaaS Dashboard", "Portfolio", "Landing Page", "Agency", "Blog", "Marketplace", "Startup", "Mobile App", "Restaurant", "Real Estate", "Fitness"].map((b) => (
+              <span key={`${i}-${b}`} className="cy-glass rounded-full px-5 py-2 text-sm font-semibold text-[var(--cy-ink-2)] shrink-0">{b}</span>
             ))
           )}
         </div>
@@ -236,6 +307,7 @@ export function Hero() {
     </section>
   );
 }
+
 
 /* ---------- STATS ---------- */
 function Counter({ end, suffix = "", duration = 1800 }: { end: number; suffix?: string; duration?: number }) {
@@ -333,7 +405,7 @@ export function Services() {
               <div className="grid size-14 mx-auto place-items-center rounded-2xl text-white" style={{ background: "var(--cy-grad-primary)" }}>
                 <Sparkles className="size-7" />
               </div>
-              <div className="mt-3 text-sm font-semibold text-[var(--cy-ink)]">CODEYART CORE</div>
+              <div className="mt-3 text-sm font-semibold text-[var(--cy-ink)]">ZYVERA CORE</div>
               <div className="text-xs text-[var(--cy-mute)]">Strategy · Design · Engineering</div>
             </div>
           </div>
@@ -468,7 +540,7 @@ export function AISection() {
           </svg>
           <div className="absolute inset-0 grid place-items-center pointer-events-none">
             <div className="cy-glass-strong rounded-2xl px-5 py-3 text-xs font-semibold tracking-wider text-[var(--cy-ink)]">
-              CODEYART · NEURAL CORE
+              ZYVERA · NEURAL CORE
             </div>
           </div>
         </div>
@@ -615,7 +687,7 @@ export function Process() {
 /* ---------- TESTIMONIALS ---------- */
 export function Testimonials() {
   const items = [
-    { n: "Priya Menon", r: "CPO, Nimbus", q: "Codeyart shipped a platform our team scaled to millions of users without a hiccup. Truly studio-grade.", a: "PM" },
+    { n: "Priya Menon", r: "CPO, Nimbus", q: "Zyvera shipped a platform our team scaled to millions of users without a hiccup. Truly studio-grade.", a: "PM" },
     { n: "Daniel Cole", r: "CEO, Orbit Labs", q: "Best engineering partner we've worked with — design, code, growth: every detail considered.", a: "DC" },
     { n: "Aiko Tanaka", r: "VP, Helios Health", q: "They translated complex compliance into a product clinicians actually love. Magic.", a: "AT" },
     { n: "Marco Vidal", r: "CTO, Quantia", q: "Sub-50ms inference, beautiful UI, deployed in 6 weeks. We're long-term partners now.", a: "MV" },
@@ -804,7 +876,7 @@ export function Contact() {
 
           <div className="lg:col-span-2 grid gap-4">
             {[
-              { i: Mail, l: "Email", v: "hello@codeyart.com" },
+              { i: Mail, l: "Email", v: "hello@zyvera.com" },
               { i: Phone, l: "Call", v: "+1 (415) 555-0190" },
               { i: MapPin, l: "Studio", v: "San Francisco · Bangalore · London" },
               { i: PartyPopper, l: "Careers", v: "We're hiring across 12 roles" },
@@ -851,8 +923,8 @@ export function Footer() {
         <div className="cy-glass-strong rounded-[36px] p-10 grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2">
-              <span className="grid size-9 place-items-center rounded-xl text-white font-bold" style={{ background: "var(--cy-grad-primary)" }}>C</span>
-              <span className="font-semibold text-lg tracking-tight text-[var(--cy-ink)]">Codeyart Software Solutions</span>
+              <span className="grid size-9 place-items-center rounded-xl text-white font-bold" style={{ background: "var(--cy-grad-primary)" }}>Z</span>
+              <span className="font-semibold text-lg tracking-tight text-[var(--cy-ink)]">Zyvera</span>
             </div>
             <p className="mt-4 text-sm text-[var(--cy-mute)] max-w-md">
               A global technology and digital transformation studio engineering the
@@ -872,7 +944,7 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-8 flex flex-wrap items-center justify-between gap-3 text-xs text-[var(--cy-mute)]">
-          <div>© {new Date().getFullYear()} Codeyart Software Solutions. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Zyvera. All rights reserved.</div>
           <div className="flex gap-5"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a></div>
         </div>
       </div>
