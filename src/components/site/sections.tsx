@@ -60,7 +60,7 @@ export function Navbar() {
     const f = () => setScrolled(window.scrollY > 30);
     f(); window.addEventListener("scroll", f); return () => window.removeEventListener("scroll", f);
   }, []);
-  const links = ["Services", "Work", "Industries", "Process", "Stack", "Contact"];
+  const links = ["Templates", "Categories", "Pricing", "Showcase", "Stack", "Contact"];
   return (
     <header className="fixed top-0 inset-x-0 z-50 flex justify-center pt-4 px-4">
       <nav className={`flex items-center gap-6 rounded-full px-3 py-2 transition-all ${scrolled ? "cy-glass-strong" : "cy-glass"}`}>
