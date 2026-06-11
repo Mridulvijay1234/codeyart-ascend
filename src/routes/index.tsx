@@ -1,29 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useLenis } from "@/hooks/use-lenis";
+import {
+  Navbar, Hero, Stats, Services, AISection, CaseStudies,
+  Industries, Process, Testimonials, TechStack, GlobalImpact,
+  Contact, Footer,
+} from "@/components/site/sections";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Codeyart Software Solutions — Transforming Businesses Through Technology" },
+      { name: "description", content: "Codeyart builds software, websites, AI solutions, and digital growth systems for ambitious companies. A global technology and transformation studio." },
+      { property: "og:title", content: "Codeyart Software Solutions — Build the Future" },
+      { property: "og:description", content: "Web, software, AI, marketing, automation, branding. A billion-dollar-grade studio for the next generation of business." },
     ],
   }),
-  component: Index,
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Home() {
+  useLenis();
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="relative overflow-x-hidden">
+      <Navbar />
+      <Hero />
+      <Stats />
+      <Services />
+      <AISection />
+      <CaseStudies />
+      <Industries />
+      <Process />
+      <Testimonials />
+      <TechStack />
+      <GlobalImpact />
+      <Contact />
+      <Footer />
+    </main>
   );
 }
