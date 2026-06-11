@@ -66,7 +66,7 @@ export function Navbar() {
       <nav className={`flex items-center gap-6 rounded-full px-3 py-2 transition-all ${scrolled ? "cy-glass-strong" : "cy-glass"}`}>
         <a href="#" className="flex items-center gap-2 pl-3 pr-2">
           <span className="grid size-8 place-items-center rounded-xl text-white font-bold" style={{ background: "var(--cy-grad-primary)" }}>C</span>
-          <span className="font-semibold tracking-tight text-[var(--cy-ink)]">Codeyart</span>
+          <span className="font-semibold tracking-tight text-[var(--cy-ink)]">Zyvera</span>
         </a>
         <ul className="hidden md:flex items-center gap-1">
           {links.map(l => (
@@ -333,7 +333,7 @@ export function Services() {
               <div className="grid size-14 mx-auto place-items-center rounded-2xl text-white" style={{ background: "var(--cy-grad-primary)" }}>
                 <Sparkles className="size-7" />
               </div>
-              <div className="mt-3 text-sm font-semibold text-[var(--cy-ink)]">CODEYART CORE</div>
+              <div className="mt-3 text-sm font-semibold text-[var(--cy-ink)]">ZYVERA CORE</div>
               <div className="text-xs text-[var(--cy-mute)]">Strategy · Design · Engineering</div>
             </div>
           </div>
@@ -468,7 +468,7 @@ export function AISection() {
           </svg>
           <div className="absolute inset-0 grid place-items-center pointer-events-none">
             <div className="cy-glass-strong rounded-2xl px-5 py-3 text-xs font-semibold tracking-wider text-[var(--cy-ink)]">
-              CODEYART · NEURAL CORE
+              ZYVERA · NEURAL CORE
             </div>
           </div>
         </div>
@@ -615,7 +615,7 @@ export function Process() {
 /* ---------- TESTIMONIALS ---------- */
 export function Testimonials() {
   const items = [
-    { n: "Priya Menon", r: "CPO, Nimbus", q: "Codeyart shipped a platform our team scaled to millions of users without a hiccup. Truly studio-grade.", a: "PM" },
+    { n: "Priya Menon", r: "CPO, Nimbus", q: "Zyvera shipped a platform our team scaled to millions of users without a hiccup. Truly studio-grade.", a: "PM" },
     { n: "Daniel Cole", r: "CEO, Orbit Labs", q: "Best engineering partner we've worked with — design, code, growth: every detail considered.", a: "DC" },
     { n: "Aiko Tanaka", r: "VP, Helios Health", q: "They translated complex compliance into a product clinicians actually love. Magic.", a: "AT" },
     { n: "Marco Vidal", r: "CTO, Quantia", q: "Sub-50ms inference, beautiful UI, deployed in 6 weeks. We're long-term partners now.", a: "MV" },
@@ -804,7 +804,7 @@ export function Contact() {
 
           <div className="lg:col-span-2 grid gap-4">
             {[
-              { i: Mail, l: "Email", v: "hello@codeyart.com" },
+              { i: Mail, l: "Email", v: "hello@zyvera.com" },
               { i: Phone, l: "Call", v: "+1 (415) 555-0190" },
               { i: MapPin, l: "Studio", v: "San Francisco · Bangalore · London" },
               { i: PartyPopper, l: "Careers", v: "We're hiring across 12 roles" },
@@ -852,7 +852,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2">
               <span className="grid size-9 place-items-center rounded-xl text-white font-bold" style={{ background: "var(--cy-grad-primary)" }}>C</span>
-              <span className="font-semibold text-lg tracking-tight text-[var(--cy-ink)]">Codeyart Software Solutions</span>
+              <span className="font-semibold text-lg tracking-tight text-[var(--cy-ink)]">Zyvera</span>
             </div>
             <p className="mt-4 text-sm text-[var(--cy-mute)] max-w-md">
               A global technology and digital transformation studio engineering the
@@ -872,7 +872,7 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-8 flex flex-wrap items-center justify-between gap-3 text-xs text-[var(--cy-mute)]">
-          <div>© {new Date().getFullYear()} Codeyart Software Solutions. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Zyvera. All rights reserved.</div>
           <div className="flex gap-5"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a></div>
         </div>
       </div>

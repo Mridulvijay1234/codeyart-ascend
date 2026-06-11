@@ -9,9 +9,9 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Codeyart Software Solutions — Transforming Businesses Through Technology" },
-      { name: "description", content: "Codeyart builds software, websites, AI solutions, and digital growth systems for ambitious companies. A global technology and transformation studio." },
-      { property: "og:title", content: "Codeyart Software Solutions — Build the Future" },
+      { title: "Zyvera — Transforming Businesses Through Technology" },
+      { name: "description", content: "Zyvera builds software, websites, AI solutions, and digital growth systems for ambitious companies. A global technology and transformation studio." },
+      { property: "og:title", content: "Zyvera — Build the Future" },
       { property: "og:description", content: "Web, software, AI, marketing, automation, branding. A billion-dollar-grade studio for the next generation of business." },
     ],
   }),
